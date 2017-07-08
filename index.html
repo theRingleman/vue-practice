@@ -2,15 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>View Practice</title>
+  <title>Vue Practice</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <div id="root">
+  <div id="app1">
     <input type="text" id="input" v-model='message'>
 
-    <p>The value of the input is: {{message}}!</p>
+    <p>The value of the input is: {{message}}</p>
+  </div>
+
+  <div id="app2">
+  	<h1 v-bind:title='title'>{{message}}</h1>
+  </div>
+
+  <div id="app3">
+  	<p v-if='seen'>Now you see me!</p>
+  </div>
+
+  <div id="app4">
+  	<ol>
+  		<li v-for='todo in todos'>
+  			{{todo.text}}	
+  		</li>
+  	</ol>
   </div>
 
   <script src="https://unpkg.com/vue"></script>
