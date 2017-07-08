@@ -4,45 +4,68 @@
   <meta charset="UTF-8">
   <title>Vue Practice</title>
   <link rel="stylesheet" href="./style.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-	<a href="./tut-section-2.html">Next</a>
+	
+	<div class="container">
+		<div class="row">
 
-  <div id="app1">
-    <input type="text" id="input" v-model='message'>
+			<div class="col-sm-12">
+				<nav>
+					<a href="./tut-section-2.html">Next</a>
+				</nav>
+			</div>
 
-    <p>The value of the input is: {{message}}</p>
-  </div>
+		  <div class="col-sm-12">
+		  	<div id="app1" class="v-app">
+		  	  <input type="text" id="input" v-model='message'>
+		  	  <p>The value of the input is: {{message}}</p>
+		  	</div>
+		  </div>
 
-  <div id="app2">
-  	<h1 v-bind:title='title'>{{message}}</h1>
-  </div>
+		  <div class="col-sm-12">
+		  	<div id="app2" class="v-app">
+		  		<h1 v-bind:title='title'>{{message}}</h1>
+		  	</div>
+		  </div>
 
-  <div id="app3">
-  	<p v-if='seen'>Now you see me!</p>
-  </div>
+		  <div class="col-sm-12">
+		  	<div id="app3" class="v-app">
+		  		<p v-if='seen'>Now you see me!</p>
+		  	</div>
+		  </div>
 
-  <div id="app4">
-  	<ol>
-  		<li v-for='todo in todos'>
-  			{{todo.text}}	
-  		</li>
-  	</ol>
-  </div>
+		  <div class="col-sm-12">
+		  	<div id="app4" class="v-app">
+		  		<ol>
+		  			<li v-for='todo in todos'>
+		  				{{todo.text}}	
+		  			</li>
+		  		</ol>
+		  	</div>
+		  </div>
 
-  <div id="app5">
-  	<p>{{message}}</p>
-  	<button v-on:click="reverseMessage">Reverse Message</button>
-  </div>
+		  <div class="col-sm-12">
+		  	<div id="app5" class="v-app">
+		  		<p>{{message}}</p>
+		  		<button v-on:click="reverseMessage">Reverse Message</button>
+		  	</div>
+		  </div>
 
-	<div id="app6">
-		<ol>
-			<todo-item
-	      v-for="item in groceryList"
-	      v-bind:todo="item"
-	      v-bind:key="item.id">
-			</todo-item>
-		</ol>
+			<div class="col-sm-12">
+				<div id="app6" class="v-app">
+					<ol>
+						<todo-item
+				      v-for="item in groceryList"
+				      v-bind:todo="item"
+				      v-bind:key="item.id">
+						</todo-item>
+					</ol>
+				</div>
+			</div>
+
+		</div>
 	</div>
 
   <script src="https://unpkg.com/vue"></script>
