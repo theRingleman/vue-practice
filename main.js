@@ -30,3 +30,31 @@ var app4 = new Vue({
 		]
 	}
 })
+
+var app5 = new Vue({
+	el: '#app5',
+	data: {
+		message: 'This is going to be reversed!'
+	},
+	methods: {
+		reverseMessage: function(){
+			this.message = this.message.split('').reverse().join('')
+		}
+	}
+})
+
+Vue.component('todo-item', {
+	props: ['todo'],
+  template: '<li>{{todo.text}}</li>'
+})
+
+var app6 = new Vue({
+	el: '#app6',
+	data: {
+		groceryList: [
+			{id: 1, text: 'Vegetables'},
+			{id: 2, text: 'Cheese'},
+			{id: 3, text: 'Anything else I need to buy'}
+		]
+	}
+})

@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+	<a href="./tut-section-2.html">Next</a>
 
   <div id="app1">
     <input type="text" id="input" v-model='message'>
@@ -28,6 +29,21 @@
   		</li>
   	</ol>
   </div>
+
+  <div id="app5">
+  	<p>{{message}}</p>
+  	<button v-on:click="reverseMessage">Reverse Message</button>
+  </div>
+
+	<div id="app6">
+		<ol>
+			<todo-item
+	      v-for="item in groceryList"
+	      v-bind:todo="item"
+	      v-bind:key="item.id">
+			</todo-item>
+		</ol>
+	</div>
 
   <script src="https://unpkg.com/vue"></script>
   <script src="./main.js"></script>
