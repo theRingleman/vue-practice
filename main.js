@@ -97,3 +97,27 @@ var app8 = new Vue({
 
 	}
 })
+
+Vue.component('task-list', {
+	template: `
+		<div>
+			<task v-for='task in tasks'>{{task.description}}</task>
+		</div>
+	`,
+	data(){
+		return {
+			tasks: [
+				{description: "Go to the store", completed: false},
+				{description: "Finish test app", completed: false},
+				{description: "Make this work", completed: false},
+				{description: "Clear inbox", completed: true},
+				{description: "Make dinner", completed: true},
+				{description: "Clearn room", completed: false},
+			]
+		}
+	}
+})
+
+Vue.component('task', {
+	template: "<li><slot></slot</li>"
+})
