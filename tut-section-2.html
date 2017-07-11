@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Section 2 | Vue Tut</title>
-	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="./style.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
@@ -16,6 +16,36 @@
 					<a href="./tut-section-1.html">Previous</a>
 					<!-- <a href="./tut-section-3.html">Next</a> -->
 				</nav>
+			</div>
+
+			<div class="col-sm-12">
+				<div id="app7">
+					<ul>
+						<li v-for='name in names' v-text='name'></li>
+					</ul>
+
+					<input type="text" v-model='newName'>
+					<button id='button' @click="addName">Add Name</button>
+				</div>
+			</div>
+
+			<div class="col-sm-12">
+				<div id="app8">
+					<h2>All Tasks</h2>
+					<ul>
+						<li v-for="task in tasks">
+							{{task.description}} - <input type="checkbox" v-model='task.completed'>
+						</li>
+					</ul>
+					<h2>Uncomplete Tasks</h2>
+					<ul>
+						<li v-for="task in incompleteTasks" v-text='task.description'></li>
+					</ul>
+					<h2>Complete Tasks</h2>
+					<ul>
+						<li v-for="task in completeTasks" v-text='task.description'></li>
+					</ul>
+				</div>
 			</div>
 
 		</div>		

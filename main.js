@@ -58,3 +58,42 @@ var app6 = new Vue({
 		]
 	}
 })
+
+var app7 = new Vue({
+	el: '#app7',
+	data: {
+		newName: '',
+		names: ['Sam', 'Gwen', 'Cadee', 'Lilly']
+	},
+	methods: {
+		addName(){
+			this.names.push(this.newName)
+			this.newName = '';
+		}
+	}
+})
+
+var app8 = new Vue({
+	el: '#app8',
+	data: {
+		tasks: [
+			{description: "Go to the store", completed: false},
+			{description: "Finish test app", completed: false},
+			{description: "Make this work", completed: false},
+			{description: "Clear inbox", completed: true},
+			{description: "Make dinner", completed: true},
+			{description: "Clearn room", completed: false},
+		]
+	},
+	computed: {
+
+		incompleteTasks(){
+			return this.tasks.filter(task => !task.completed)
+		},
+
+		completeTasks(){
+			return this.tasks.filter(task => task.completed)
+		}
+
+	}
+})
